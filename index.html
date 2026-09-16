@@ -4,66 +4,391 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
+  <title>Mohsi Jawaid — Computer vision for space</title>
+  <meta name="description" content="Mohsi Jawaid — computer vision researcher in Adelaide working on event-based sensing and spacecraft pose estimation.">
   <link rel="icon" href="favicon.ico">
-  <link rel="canonical" href="http://abdulmohsij.github.io">
-
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js" integrity="sha512-cuCpFhuSthtmbmQ5JjvU7msRYynRI67jVHsQhTP8RY+H4BC9qa9kQJeHTomV9/QnOWJbDpLFKdbIHtqTomJJug==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.js" integrity="sha512-cuCpFhuSthtmbmQ5JjvU7msRYynRI67jVHsQhTP8RY+H4BC9qa9kQJeHTomV9/QnOWJbDpLFKdbIHtqTomJJug==" crossorigin="anonymous"></script>
-
-  <!-- Custom styles for this template -->
+  <link rel="canonical" href="https://mohsij.github.io/">
+  <meta name="color-scheme" content="dark">
   <link href="styles.css" rel="stylesheet">
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Mohsi's Dev Blog</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="bounce.html">First P5.js sketch</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="youAreAwesome.html">Positivity</a>
-            </li>
-          </ul>
-        </div>
+  <button class="sidebar-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="sidebar">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+      <path d="M3 6h18M3 12h18M3 18h18" />
+    </svg>
+  </button>
+  <button class="sidebar-backdrop" type="button" tabindex="-1" aria-label="Close navigation"></button>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a class="sidebar-brand" href="index.html">
+      <span class="monogram" aria-hidden="true">MJ</span>
+      <span class="sidebar-brand-text">
+        <span class="sidebar-name">Mohsi Jawaid</span>
+        <span class="sidebar-role">Computer vision &amp; space</span>
+      </span>
+    </a>
+
+    <nav aria-label="Main">
+      <div class="nav-group">
+        <p class="nav-label">Pages</p>
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="bounce.html">First P5.js sketch</a></li>
+          <li><a href="youAreAwesome.html">Positivity</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-label">On this page</p>
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#awards">Awards</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-group">
+        <p class="nav-label">Elsewhere</p>
+        <ul class="nav-list">
+          <li>
+            <a href="https://www.linkedin.com/in/mohsij/" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.84 0-2.12 1.43-2.12 2.9V21H9z"/></svg>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/mohsij" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.26.8-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.82.57A12 12 0 0012 .5z"/></svg>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://scholar.google.com/citations?user=9t85FwgAAAAJ" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L1 8l11 6 9-4.91V17h2V8zM4 12.6V16c0 2.2 3.6 4 8 4s8-1.8 8-4v-3.4l-8 4.36z"/></svg>
+              Google Scholar
+            </a>
+          </li>
+          <li>
+            <a href="https://researchers.adelaide.edu.au/profile/mohsi.jawaid" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+              Adelaide profile
+            </a>
+          </li>
+          <li>
+            <a href="mailto:mohsi.jawaid@adelaide.edu.au">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+              Email
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
-  </header>
 
-  <main>
+    <div class="sidebar-footer">
+      Adelaide, South Australia
+    </div>
+  </aside>
 
-    <div class="container marketing mt-5">
-      <h2 class="featurette-heading">Welcome to my blog!</h2>
-      <p>From time to time I plan on posting my thoughts and general tips for my future self here. <br><br> Hopefully, they will be useful to other people as well. </p>
-      <hr class="featurette-divider">
+  <!-- CONTENT -->
+  <div class="content">
+    <main class="container" id="main">
 
-    </div><!-- /.container -->
+      <!-- HERO -->
+      <section class="hero">
+        <span class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Adelaide, South Australia</span>
+        <h1>Mohsi Jawaid</h1>
+        <p class="hero-tagline">
+          Computer vision researcher working on <strong>vision-based orbital guidance, navigation
+          and control</strong> — teaching spacecraft to work out where they are from what their
+          cameras see, even when the lighting is brutal.
+        </p>
+        <div class="hero-meta">
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+            University of Adelaide
+          </span>
+          <span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18 15 15 0 010-18"/></svg>
+            Australian Institute of Machine Learning
+          </span>
+        </div>
+        <div class="button-row">
+          <a class="btn btn-primary" href="mailto:mohsi.jawaid@adelaide.edu.au">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            Get in touch
+          </a>
+          <a class="btn" href="https://github.com/mohsij" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.26.8-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 016 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .31.21.68.82.57A12 12 0 0012 .5z"/></svg>
+            GitHub
+          </a>
+          <a class="btn" href="https://www.linkedin.com/in/mohsij/" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.3-.02-3-1.83-3-1.84 0-2.12 1.43-2.12 2.9V21H9z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </section>
 
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <h2 class="section-title">About</h2>
+        <p>
+          I'm a computer vision researcher at the University of Adelaide, working with the
+          <a href="https://www.adelaide.edu.au/aiml/" rel="noopener">Australian Institute of Machine Learning</a>
+          on perception for spacecraft. My PhD tackled the <em>sim2real domain gap</em>: models for
+          satellite pose estimation have to be trained on synthetic imagery, because real
+          in-orbit data with ground truth barely exists — and they tend to fall apart the moment
+          they meet a real camera.
+        </p>
+        <p>
+          Most of my work leans on <strong>event cameras</strong> (neuromorphic sensors that report
+          per-pixel brightness changes instead of frames). Their enormous dynamic range makes them
+          far more robust to the glare, over-exposure and lens flare that wreck conventional RGB
+          in orbit. Lately I've been fusing the two sensor types, and putting pose estimation onto
+          neuromorphic processors.
+        </p>
+        <p>
+          Before research I was a software engineer at <strong>Maptek</strong>, building machine
+          learning features for mining software, and I've taught object-oriented programming at
+          Adelaide.
+        </p>
 
-    <!-- FOOTER -->
-    <footer class="container">
-      <p class="float-end"><a href="#top">Back to top</a></p>
-      <p>&copy; 2017–2021 Abdul Mohsi Jawaid.</p>
-    </footer>
-  </main>
+        <div class="grid grid-3" style="margin-top: 1.75rem;">
+          <div class="card stat">
+            <span class="stat-value">240+</span>
+            <span class="stat-label">Citations</span>
+          </div>
+          <div class="card stat">
+            <span class="stat-value">5</span>
+            <span class="stat-label">h-index</span>
+          </div>
+          <div class="card stat">
+            <span class="stat-value">8</span>
+            <span class="stat-label">Publications</span>
+          </div>
+        </div>
+      </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+      <!-- EXPERIENCE -->
+      <section class="section" id="experience">
+        <h2 class="section-title">Experience &amp; education</h2>
+        <ul class="timeline">
+          <li>
+            <div class="timeline-head">
+              <span class="timeline-role">Grant-Funded Researcher (B)</span>
+              <span class="timeline-date">Current</span>
+            </div>
+            <span class="timeline-org">School of Computer Science and IT, University of Adelaide</span>
+            <p>
+              Vision-based orbital guidance, navigation and control. Event-based and event–RGB
+              spacecraft pose estimation, hardware-in-the-loop experiments, and neuromorphic
+              deployment.
+            </p>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <span class="timeline-role">PhD, Computer Science</span>
+              <span class="timeline-date">Thesis submitted 2026</span>
+            </div>
+            <span class="timeline-org">University of Adelaide · Australian Institute of Machine Learning</span>
+            <p>
+              Bridging the synthetic-to-real domain gap for spacecraft pose estimation using event
+              sensing — including the SEENIC dataset and test-time self-supervision methods.
+            </p>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <span class="timeline-role">Software Engineer</span>
+              <span class="timeline-date">Previously</span>
+            </div>
+            <span class="timeline-org">Maptek</span>
+            <p>
+              Joined through an internship and stayed on, developing machine learning features for
+              mining and geospatial software.
+            </p>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <span class="timeline-role">Teaching — Object-Oriented Programming</span>
+              <span class="timeline-date">—</span>
+            </div>
+            <span class="timeline-org">University of Adelaide</span>
+            <p>Tutoring and teaching support for undergraduate programming courses.</p>
+          </li>
+          <li>
+            <div class="timeline-head">
+              <span class="timeline-role">Bachelor of Computer Science (Advanced)</span>
+              <span class="timeline-date">2016 – 2018</span>
+            </div>
+            <span class="timeline-org">University of Adelaide</span>
+            <p>Graduated with multiple prizes and Executive Dean's Awards for academic excellence.</p>
+          </li>
+        </ul>
+      </section>
 
+      <!-- RESEARCH -->
+      <section class="section" id="research">
+        <h2 class="section-title">What I work on</h2>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Event-based space vision</h3>
+            <p style="color: var(--text-muted); font-size: 0.93rem; margin: 0;">
+              Neuromorphic sensors for spacecraft pose estimation — high dynamic range perception
+              that survives glare, blooming and eclipse transitions.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Sim2real domain adaptation</h3>
+            <p style="color: var(--text-muted); font-size: 0.93rem; margin: 0;">
+              Closing the gap between rendered training data and real sensor data, including
+              test-time self-supervision with certifiability guarantees.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Sensor fusion</h3>
+            <p style="color: var(--text-muted); font-size: 0.93rem; margin: 0;">
+              Combining event and RGB streams so each covers the other's blind spots: resolution
+              and texture from RGB, dynamic range and latency from events.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Synthetic data &amp; HIL testing</h3>
+            <p style="color: var(--text-muted); font-size: 0.93rem; margin: 0;">
+              Virtual production pipelines and robotic hardware-in-the-loop rigs for generating
+              realistic, ground-truthed orbital navigation datasets.
+            </p>
+          </div>
+        </div>
 
+        <ul class="tags" style="margin-top: 1.25rem;">
+          <li>Computer vision</li>
+          <li>Deep learning</li>
+          <li>Event cameras</li>
+          <li>Pose estimation</li>
+          <li>Domain adaptation</li>
+          <li>Generative models</li>
+          <li>Python</li>
+          <li>PyTorch</li>
+          <li>C++</li>
+        </ul>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section class="section" id="publications">
+        <h2 class="section-title">Selected publications</h2>
+        <ul class="pub-list">
+          <li class="pub">
+            <span class="pub-year">2026</span>
+            <span>
+              <span class="pub-title">Robust PnP on a Neuromorphic Processor for Object Pose Estimation</span>
+              <span class="pub-venue">Preprint</span>
+            </span>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2025</span>
+            <span>
+              <a class="pub-title" href="https://arxiv.org/abs/2507.05698" rel="noopener">Event-RGB Fusion for Spacecraft Pose Estimation Under Harsh Lighting</a>
+              <span class="pub-venue">Aerospace Science and Technology</span>
+            </span>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2025</span>
+            <span>
+              <span class="pub-title">Virtual Production for Hardware-in-the-Loop Vision-based Orbital Navigation Experiments</span>
+              <span class="pub-venue">International Conference on Space Robotics (iSpaRo)</span>
+            </span>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2024</span>
+            <span>
+              <span class="pub-title">Test-Time Certifiable Self-Supervision to Bridge the Sim2Real Gap in Event-Based Satellite Pose Estimation</span>
+              <span class="pub-venue">IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)</span>
+            </span>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2023</span>
+            <span>
+              <span class="pub-title">Satellite Pose Estimation Competition 2021: Results and Analyses</span>
+              <span class="pub-venue">Acta Astronautica</span>
+            </span>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2023</span>
+            <span>
+              <a class="pub-title" href="https://arxiv.org/abs/2209.11945" rel="noopener">Towards Bridging the Space Domain Gap for Satellite Pose Estimation using Event Sensing</a>
+              <span class="pub-venue">IEEE International Conference on Robotics and Automation (ICRA)</span>
+            </span>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2022</span>
+            <span>
+              <a class="pub-title" href="https://zenodo.org/records/7214231" rel="noopener">SEENIC: A Dataset for Spacecraft Pose Estimation with Neuromorphic Vision</a>
+              <span class="pub-venue">Dataset — 20 scenes, two trajectories, five lighting configurations</span>
+            </span>
+          </li>
+          <li class="pub">
+            <span class="pub-year">2018</span>
+            <span>
+              <span class="pub-title">G2D: From GTA to Data</span>
+              <span class="pub-venue">Preprint — synthetic data extraction from game engines</span>
+            </span>
+          </li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.88rem; color: var(--text-faint);">
+          Full list on <a href="https://scholar.google.com/citations?user=9t85FwgAAAAJ" rel="noopener">Google Scholar</a>.
+        </p>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section" id="projects">
+        <h2 class="section-title">Code &amp; projects</h2>
+        <div class="grid grid-2">
+          <article class="card project">
+            <h3><a href="https://github.com/mohsij/space-event-rgb-fusion" rel="noopener">space-event-rgb-fusion</a></h3>
+            <p>Multimodal event–RGB fusion for spacecraft pose estimation under harsh orbital lighting.</p>
+            <div class="project-meta"><span><span class="lang-dot" aria-hidden="true"></span>Python</span></div>
+          </article>
+          <article class="card project">
+            <h3><a href="https://github.com/mohsij/event-pose-certification" rel="noopener">event-pose-certification</a></h3>
+            <p>Test-time certifiable self-supervision for event-based satellite pose estimation — the reference implementation for the IROS 2024 paper.</p>
+            <div class="project-meta"><span><span class="lang-dot" aria-hidden="true"></span>Python</span></div>
+          </article>
+          <article class="card project">
+            <h3><a href="https://github.com/mohsij/spacecraft-pose-estimation" rel="noopener">spacecraft-pose-estimation</a></h3>
+            <p>A generalised spacecraft pose estimation pipeline that handles both RGB and event data.</p>
+            <div class="project-meta"><span><span class="lang-dot" aria-hidden="true"></span>Python</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- AWARDS -->
+      <section class="section" id="awards">
+        <h2 class="section-title">Awards &amp; honours</h2>
+        <ul class="plain-list">
+          <li><strong>Top rankings, ESA Kelvins Satellite Pose Estimation Challenge</strong> — as part of Team TangoUnchained</li>
+          <li><strong>Australian Computer Society Prize</strong> (2018)</li>
+          <li><strong>Maptek Prize in Computer Science</strong></li>
+          <li><strong>Executive Dean's Awards</strong> — multiple, for academic excellence</li>
+          <li><strong>Governor's International Award</strong></li>
+          <li><strong>Oracle User Group Prize</strong></li>
+        </ul>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <span>&copy; 2017–2026 Abdul Mohsi Jawaid</span>
+        <a href="#top">Back to top</a>
+      </footer>
+    </main>
+  </div>
+
+  <script src="nav.js"></script>
 </body>
 
 </html>

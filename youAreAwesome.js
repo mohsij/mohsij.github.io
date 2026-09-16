@@ -6,15 +6,16 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(18, 24, 33);
   textSize(25);
   textAlign(CENTER);
   if (displayText) {
-    fill(random(0, 255),random(0, 255), random(0, 255));
+    // Keep the random colours bright enough to read on the dark background.
+    fill(random(120, 255), random(120, 255), random(120, 255));
     text("You are awesome!",250,250);
   }
   else {
-    fill(0);
+    fill(139, 152, 168);
     text("Click me!",250,250);
   }
 }

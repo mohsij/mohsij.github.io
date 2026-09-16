@@ -8,7 +8,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(18, 24, 33);
   fill(255 - i, i, 255 - (i * 5));
   ellipse(
     width / 2 + (width / 4 * cos((i/100 * PI))),
