@@ -146,18 +146,14 @@ code {
   text-decoration: none;
 }
 
-.monogram {
+.avatar {
   flex: none;
   width: 2.75rem;
   height: 2.75rem;
-  display: grid;
-  place-items: center;
   border-radius: 0.65rem;
-  background: linear-gradient(140deg, var(--accent-strong), var(--violet));
-  color: #06131d;
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
+  object-fit: cover;
+  background: var(--bg-hover);
+  box-shadow: 0 0 0 1px var(--border);
 }
 
 .sidebar-brand-text {
@@ -319,7 +315,25 @@ code {
    ========================================================= */
 
 .hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2.75rem;
+  align-items: center;
   margin-bottom: 3.5rem;
+}
+
+/* The headshot sits on a flat yellow backdrop, so the outer ring picks that
+   yellow up faintly to tie it to the rest of the dark palette. */
+.hero-portrait img {
+  display: block;
+  width: 12.5rem;
+  height: 12.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow:
+    0 0 0 1px var(--border),
+    0 0 0 0.5rem rgba(255, 230, 89, 0.07),
+    0 1.25rem 2.5rem rgba(0, 0, 0, 0.5);
 }
 
 .eyebrow {
@@ -723,6 +737,24 @@ code {
 @media (max-width: 62rem) {
   .sketch-layout {
     grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 48rem) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
+    justify-items: start;
+  }
+
+  /* Lead with the face on narrow screens. */
+  .hero-portrait {
+    order: -1;
+  }
+
+  .hero-portrait img {
+    width: 8.5rem;
+    height: 8.5rem;
   }
 }
 
